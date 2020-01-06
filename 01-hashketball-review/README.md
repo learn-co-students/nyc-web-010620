@@ -24,8 +24,13 @@
     - [ ] #select
     - [ ] #map
     - [ ] #find
+- [ ] Use `binding.pry` to help with debugging
 - [ ] Create Methods
     - [ ] basically allow us to organize our procedures
+
+### pry
+
+### Variables
 
 ### Data Types
 * Strings  - some data representing text
@@ -34,7 +39,7 @@
 * Integers - some data represting numbers
 * Boolean  - true or false
     * !!
-
+    * truthy vs falsey
 * Arrays
     * indices
     * how to access something.
@@ -48,11 +53,6 @@
 * map - put whatever the block returns in a new array
 * find - return the first thing that returns true 
 * select - returns all the things that returned true
-
-### Methods in ruby
-* Implicit return
-* Explicit return
-* binding.pry
 
 
 ```ruby
