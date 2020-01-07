@@ -17,7 +17,7 @@
 * please don't just keep guessing till all the lights turn green.
 
 
-## SWBATS
+## SWBATs
 - [ ] Identify common data types in Ruby.
 - [ ] Explain what these iterators do:
     - [ ] #each
