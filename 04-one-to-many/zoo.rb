@@ -19,7 +19,7 @@ class Zoo
 
   def animals
     Animal.all.select do |animal|
-      self.name == animal.zoo.name
+      self == animal.zoo
     end
   end
 
