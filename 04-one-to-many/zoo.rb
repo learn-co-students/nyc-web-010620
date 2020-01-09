@@ -1,8 +1,5 @@
-# setup basic syntax
-# read attributes
-# write attributes
 class Zoo
-  attr_accessor :name, :entry_fee, :telephone_number, :size
+  attr_accessor :name, :entry_fee, :telephone_number, :size, :animals
 
   @@all = []
 
@@ -11,9 +8,21 @@ class Zoo
     @entry_fee = entry_fee
     @telephone_number = telephone_number
     @size = size
+    # @animals = []
 
     @@all << self
   end
+
+  # def purchase_animal(animal)
+  #   @animals << animal
+  # end
+
+  def animals
+    Animal.all.select do |animal|
+      self.name == animal.zoo.name
+    end
+  end
+
 
   def self.all
     @@all
@@ -24,10 +33,6 @@ class Zoo
   end
 
   def self.get_affordable_zoos(price)
-    # what are we iterating over?
-    # type of iterator
-    # how do i access the data i need to check?
-    # Zoo.all.select { |zoo| zoo.entry_fee < price}
     self.all.select { |zoo| zoo.entry_fee < price}
   end
 
