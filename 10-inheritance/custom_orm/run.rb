@@ -45,7 +45,7 @@ def make_dragon
   puts "How many knights has thy dragon slain?"
   knights_slain = gets.chomp.to_i
 
-  dragon = Dragon.new(name, color, size, knights_slain)
+  dragon = Dragon.new(name: name, color: color, size: size, knights_slain: knights_slain)
   dragon.save
 
   puts "Thy dragon is bourne!"

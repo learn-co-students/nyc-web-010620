@@ -1,2 +1,7 @@
 require 'rake'
 require_relative './config/environment.rb'
+
+
+task :test do
+  Pry.start
+end
