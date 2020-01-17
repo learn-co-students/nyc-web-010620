@@ -1,4 +1,4 @@
-# Intro to ActiveRecord
+# ActiveRecord Relationships
 
 ## SWBATs
 - [ ] Use ActiveRecord to implement a many-to-many relationship

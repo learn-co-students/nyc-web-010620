@@ -5,7 +5,6 @@ class CreateKnights < ActiveRecord::Migration[5.2]
       t.string :house
       t.string :weapon
       t.boolean :alive
-      t.integer :dragon_id
  
       t.timestamps
     end
