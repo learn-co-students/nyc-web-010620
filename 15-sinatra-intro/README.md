@@ -17,7 +17,6 @@ Fake Instagram:
 - Controller
     - holds all files that are request related
 
-# What are routes
 
 # Process
 
