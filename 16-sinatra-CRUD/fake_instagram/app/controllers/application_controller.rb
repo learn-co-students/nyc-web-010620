@@ -43,7 +43,12 @@ class ApplicationController < Sinatra::Base
     redirect "/users/#{user.id}"
   end
 
-
+  delete '/users/:id' do
+    user = User.find(params[:id])
+    @name = user.name
+    user.destroy 
+    erb :delete
+  end
 
 
 end
