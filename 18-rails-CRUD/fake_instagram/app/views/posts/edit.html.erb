@@ -1,0 +1,6 @@
+<%= form_for @post do |f| %>
+<%= f.text_field :title %>
+<%= f.text_field :body %>
+<%=f.collection_select :user_id, User.all, :id, :name%>
+<%= f.submit :user_id %>
+<% end %>

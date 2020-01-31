@@ -1,0 +1,18 @@
+Post New Page
+<br>
+Form Tag
+<%= form_tag '/posts' do%>
+    <%=text_field_tag :"post[title]"%>
+    <%=text_field_tag :"post[body]"%>
+    <%=number_field_tag :"post[user_id]"%>
+    <%=submit_tag "submit"%>
+<%end%>
+<br>
+
+Form For
+<%= form_for @post do |f| %>
+<%= f.text_field :title %>
+<%= f.text_field :body %>
+<%= f.number_field :user_id %>
+<%= f.submit :user_id %>
+<% end %>
