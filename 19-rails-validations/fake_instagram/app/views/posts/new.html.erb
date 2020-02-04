@@ -1,0 +1,12 @@
+Post New Page
+<br>
+<% if flash[:message] %>
+  <h3 style="color: red"><%= flash[:message]%></h3>
+<% end %>
+
+<%= form_for @post do |f| %>
+<%= f.text_field :title %>
+<%= f.text_field :body %>
+<%=f.collection_select :user_id, @users, :id, :name%>
+<%= f.submit :user_id %>
+<% end %>
