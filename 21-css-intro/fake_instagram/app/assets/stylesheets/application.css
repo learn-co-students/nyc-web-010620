@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(to bottom right, rgba(184, 179, 179, 0.555), rgba(77, 74, 74, 0.514)), url("https://www.oberlo.com/wp-content/uploads/2019/01/shutterstock_517370548-880x450.png");
+    background-size: cover;
+    background-position: top;
+}
+
+h1{
+    border: dotted;
+    background-color: white;
+    border-color: brown;
+    color: red;
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+
+    }
+
+    nav{
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        text-align: center;
+        height: 5%;
+        width: 100%;
+        background-color: azure;
+    }
+
+    span.home{
+        color: red;
+    }
