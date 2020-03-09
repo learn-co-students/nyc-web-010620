@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">  
+      // ReactDOM.render(whatYoureRendering, whereYoureRendering it)
+      // ReactDOM.render(<App />,  document.getElementById('root'))
+
+      const myCards = [
+        {language: 'en', title: 'Hello, World!', subtitle: 'Welcome to React'},
+        {language: 'sp', title: 'Hola, Mundo!', subtitle: 'Bienvenido a React', excited: true},
+        {language: 'fr', title: 'Hallo Welt!', subtitle: ' Willkommen bei React!'},
+        {language: 'ru', title: 'Привет, мир!', subtitle: 'добро пожаловать реагировать', excited: true}
+      ]
+
+      // FUNCTIONAL COMPONENT NOTATION 
+      const Card = (props) => {
+        console.log(props)
+        const { title, subtitle, excited } = props; // destructing FTW
+        return (
+          <div>
+            <h1>{title}</h1>
+            <h3>{subtitle}{excited && "!!!!!!!!!!!!!!!!!!!!!!!!!!"}</h3>
+          </div>
+        )
+      }
+
+      // multiline JS in JSX
+
+      // map takes us from [{}, {}, {}]  tooooooo [<Card />, <Card />, <Card />]
+      ReactDOM.render(
+        <div>
+          {myCards.map(card => {
+            return <Card 
+                      key={card.language} 
+                      {...card}/>
+          }) }
+        </div>
+        , 
+        document.getElementById('root'))
+      /**
+      Rules for.. when we need parens
+      - need when you have 2+ args (argA, argB) => {}
+      - need when you have no args () => {}
+      - do NOT when theres only one argA => {}
+
+
+      Rules for... when we're implicit returning 
+      - () => {} HAVE TO explicitly return here
+      - () => m * 100 THIS IMPLICITLY RETURNS
+      - () => ({name: 'mojo', species: 'cat'}) 
+      - (name, species) => ({name, species}) 
+      */
+
+
+    </script>
+  </body>
+</html>
