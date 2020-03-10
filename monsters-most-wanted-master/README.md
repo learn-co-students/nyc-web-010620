@@ -29,6 +29,21 @@ monsters also have description (string)
     - setState on monsterCard to flip front value (true/false)
 
 
+### Round 2
+- state thangs
+    - make a new array chosenMonsters
+    - move monsters of state into app level
+    - pass props down to MonsterContainer (state.monsters) and to CampaignContainer (state.chosenMonsters)
+
+- components
+    - need CampaignContainer which will get some props from App
+
+- events
+    - click on the button on MonsterCardBack
+    - need to update app setState({ chosenMonsters: [someNewArray] })
+
+
+
 
 
 

@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import MonsterContainer from './MonsterContainer';
 import Navbar from './Navbar';
-import { StyledApp, Container, ContainerHeader } from './styledComponents';
+import { StyledApp } from './styledComponents';
+import CampaignContainer from './CampaignContainer';
 
 function App() {
   return (
@@ -10,9 +11,7 @@ function App() {
       <Navbar />
       <div style={{display: 'flex', flexDirection: 'row'}}>
         <MonsterContainer />
-        <Container half>
-          <ContainerHeader>ACTIVE CAMPAIGNS</ContainerHeader>
-        </Container>
+        <CampaignContainer monsters={[]}/>
       </div>
     </StyledApp>
   );
