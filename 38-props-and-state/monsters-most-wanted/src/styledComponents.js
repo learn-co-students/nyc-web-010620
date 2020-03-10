@@ -12,18 +12,30 @@ export const StyledApp = styled.div`
 `
 
 export const StyledNav = styled.div`
-    font-size: 2em;
-    color: white;
+    font-size: 4em;
+    color: red;
+    text-align: center;
 `
 
 export const Container = styled.div`
     background-color: rgba(50,50,50,.8);
     padding: 20px;
-    border-radius: 2%;
+    border-radius: 15px;
     margin: 50px;
     border: 1px solid lightslategrey;
     text-align: center;
     width: calc(${props => props.half ? '50' : '100'}% - 150px);
+`
+
+export const StyledBtn = styled.button`
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    margin: 2px;
+    color: darkred;
+    font-weight: 900;
+    background-color: darkgrey;
+    box-shadow: 0px 0px 22px darkred;
 `
 
 export const ContainerHeader = styled.div`

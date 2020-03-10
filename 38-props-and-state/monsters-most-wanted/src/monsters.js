@@ -1,17 +1,21 @@
 export const monsters = [
     {
         id: 1,
-        name: 'Chimera',
-        img: 'https://bira.github.io/octopus-carnival/assets/wir-mm-4e-chimera.png', 
-        difficulty: 10,
-        reward: 500
+        name: 'Basilisk',
+        img: 'https://vignette.wikia.nocookie.net/witcher/images/0/02/Bestiary_Basilisk.png/revision/latest?cb=20071116211742', 
+        difficulty: 6,
+        reward: 200,
+        description: "Simple people call the basilisk the king of the Zerrikanian / deserts and often mistake it for a cockatrice. They claim that the beast is filled with such hatred towards all living things that even its breath is venomous and its glance turns the unwary to stone. The fact that witchers often encounter basilisks in dungeons and cellars contradicts the legend and suggests these creatures can reproduce under any conditions like many of their nasty monster brethren. In fairy tales, the only certain way to kill a basilisk is by holding a mirror in front of its eyes to divert its deadly gaze. Witchers reply that it is far better to smash the mirror on the creature's head.",
+        locations: ['Black Tern Island', "Raven's crypt", "Kaer Morhen valley"]
     }, 
     {
         id: 2,
-        name: "Mitch", 
-        img: "https://bit.ly/3aJRWwf",
-        difficulty: 3, 
-        reward: 25
+        name: 'Striga',
+        img: 'https://vignette.wikia.nocookie.net/witcher/images/e/e4/Gwent_cardart_monsters_adda_striga.jpg/revision/latest/scale-to-width-down/696?cb=20181022231001',
+        difficulty: 9,
+        reward: 500,
+        description: "A striga (Polish: strzyga) is a human woman transformed into a monster by a curse. She is filled with hatred towards all living beings, devouring them without a second thought. She only comes out on a full moon to hunt, fighting with incredible speed and strength. King Foltest would sometimes tie criminals up to stakes in the ground, who would serve as a meal for the beast.",
+        locations: ["Striga's crypt"]
     },
     {
         id: 3,
@@ -103,10 +107,10 @@ export const monsters = [
     },
     {
         id: 15,
-        name: 'Striga',
-        img: 'https://vignette.wikia.nocookie.net/witcher/images/e/e4/Gwent_cardart_monsters_adda_striga.jpg/revision/latest/scale-to-width-down/696?cb=20181022231001',
-        difficulty: 3,
-        reward: 100
+        name: "Mitch", 
+        img: "https://bit.ly/3aJRWwf",
+        difficulty: 3, 
+        reward: 25
     },
     {
         id: 16,

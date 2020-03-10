@@ -4,7 +4,7 @@ import { StyledNav } from './styledComponents';
 
 const Navbar = () => {
     return (
-        <StyledNav>NAVVY</StyledNav>
+        <StyledNav>Monsters Most Wanted</StyledNav>
     )
 }
 
