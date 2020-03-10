@@ -1,0 +1,55 @@
+import styled from 'styled-components'
+
+export const StyledApp = styled.div`
+    height: 100vh;
+    width: 100vw;
+    overflow: scroll;
+    background-image: url(https://wallpaperaccess.com/full/1388241.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Griffy', cursive;
+
+`
+
+export const StyledNav = styled.div`
+    font-size: 2em;
+    color: white;
+`
+
+export const Container = styled.div`
+    background-color: rgba(50,50,50,.8);
+    padding: 20px;
+    border-radius: 2%;
+    margin: 50px;
+    border: 1px solid lightslategrey;
+    text-align: center;
+    width: calc(${props => props.half ? '50' : '100'}% - 150px);
+`
+
+export const ContainerHeader = styled.div`
+    font-size: 2em;
+    color: white;
+`
+
+export const StyledMonsterCard = styled.div`
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-evenly;
+    color: lightgrey;
+    justify-content: space-evenly;
+    padding: 10px;
+    color: lightgrey;
+    margin: 20px;
+    border: 3px ridge #cabbbbbf;
+    font-size: 1.2em;
+
+    h3 {
+        font-size: 1.75em;
+    }
+
+    > img {
+        width: 200px;
+        object-fit: contain;
+    }
+`
+
