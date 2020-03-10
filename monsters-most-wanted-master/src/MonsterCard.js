@@ -1,18 +1,28 @@
 import React from 'react'; 
-import { StyledMonsterCard } from './styledComponents';
+import MonsterCardFront from './MonsterCardFront';
+import MonsterCardBack from './MonsterCardBack';
 
-const MonsterCard = (props) => {
-    const { name, difficulty, reward, img } = props;
-    return (
-        <StyledMonsterCard>
-            <img src={img} alt="monster"/>
-            <div className="monster-info">
-                <h3>{name}</h3>
-                <div>Difficulty: {difficulty} / 10</div>
-                <div>$${reward}</div>
+class MonsterCard extends React.Component {
+    // const { name, difficulty, reward, img } = props;
+
+    state = {
+        front: true
+    }
+
+    flipCard = () => {
+        this.setState({ front: !this.state.front })
+    }
+
+    render(){
+        return (
+            <div>
+                {this.state.front 
+                    ? <MonsterCardFront {...this.props} flipCard={this.flipCard}/>
+                    : <MonsterCardBack {...this.props} flipCard={this.flipCard}/>
+                }
             </div>
-        </StyledMonsterCard>
-    )
+        )
+    }
 }
 
 export default MonsterCard; 

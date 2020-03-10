@@ -1,8 +1,36 @@
+pull your cohort repo!
+go to folder =====>	monster-most-wanted-master
+npm install
+npm start
+begin!!!!
+
+monsters also have description (string)
+     and locations (array of strings)
+
+
 ## Features
-- Flip View of Monster Card. Back side should show details & locations & button to start hunting. Button should change the monster to being hunted... somehow 
-- Campaigns Container, showing Monster Cards of the Monsters you're hunting 
-        including buttons to give up the hunt or confirm vanquishing
-- Monster Card Update: conditional rendering to show vanquished monsters differently to show that they're finished
+- Flip View of Monster Card. Back side should show details & locations & button to start hunting. 
+- Now.. when they click on the button on the back... add the monster to my campaigns... 
+
+
+### Round 1
+- X components
+    - monsterCard class component renders front or back 
+    - monsterCardFront (functional)
+    - monsterCardBack (functional) 
+
+- X state thangs
+    - on monsterCard (class) state = { front: true }
+    - ??? scope of state in monsterCard
+    - ??? when we click a monsterCard to add to campaign does it remove from mostWanted 
+
+- X events
+    - onClick or onMouseOver monsterCard (some div somewhere) defined & invoked 
+    - setState on monsterCard to flip front value (true/false)
+
+
+
+
 
 ## Questions
 - What components are you using? 
@@ -17,3 +45,20 @@
 
 ## Next Lecture: FORMS 
 - Form to submit a monster for hunting 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Campaigns Container, showing Monster Cards of the Monsters you're hunting 
+        including buttons to give up the hunt or confirm vanquishing
+- Monster Card Update: conditional rendering to show vanquished monsters differently to show that they're finished

@@ -12,9 +12,7 @@ class MonsterContainer extends React.Component{
         startIndex: 0 
     }
 
-    // faking LIFECYCLE METHODS ---> FRIYAY
     getAllMonsters = () => {
-        // pretend we fetched here
         this.setState({ monsters: initialMonsters })
     }
 
@@ -31,7 +29,7 @@ class MonsterContainer extends React.Component{
     render(){
         const { monsters, startIndex } = this.state; 
         return (
-            <Container>
+            <Container half>
                 <ContainerHeader>Most Wanted</ContainerHeader>
                 <button onClick={this.getAllMonsters}>GET MY MONSTERS</button>
                 { this.renderMonsters() }
