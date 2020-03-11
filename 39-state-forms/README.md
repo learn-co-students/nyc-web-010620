@@ -2,19 +2,19 @@ State and Forms
 ==============
 
 ## SWBATs
-- [ ] Explore state more in depth
-- [ ] Identify where (in which component) state should live
-- [ ] Explain we use controlled forms
-- [ ] Implement controlled form
-- [ ] Draw a component hierarchy and describe the Flow of Information
-- [ ] Pass data up and down the component hierarchy with our callbacks
-- [ ] Use form data to update state in various ways
+- [X] Explore state more in depth
+- [X] Identify where (in which component) state should live
+- [X] Explain we use controlled forms
+- [X] Implement controlled form
+- [X] Draw a component hierarchy and describe the Flow of Information
+- [X] Pass data up and down the component hierarchy with our callbacks
+- [X] Use form data to update state in various ways
 
 ### Features / Process
 - fetch from the json-server instead of hardcoded data
-- add monsters to our campaigns
 - show a form to add a monster on button click 
 - create the controlled form and add all corresponding behavior (managing inputs and submitting)
+- add monsters to our campaigns
 
 ## Lecture Notes
 
@@ -30,6 +30,8 @@ State and Forms
   1. Some state to manage the input
   2. A handleChange to monitor user input and update state
   3. A value attribute on the input itself (fully-controlled form)
+
+To submit a form
   4. A handleSubmit to finally submit data
 
 In React, rather than finding individual input elements using `querySelector` or `getElementBy...`, we use `state` to monitor the user's input as they type.

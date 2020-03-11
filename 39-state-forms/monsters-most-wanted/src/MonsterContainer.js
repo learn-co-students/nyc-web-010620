@@ -1,25 +1,16 @@
 import React from 'react'; 
 import MonsterCard from './MonsterCard';
-import {monsters as initialMonsters} from './monsters';
 import { ContainerHeader, Container, StyledBtn } from './styledComponents';
-
-// A KEY PROBLEM IS A ME PROBLEM 
-
 class MonsterContainer extends React.Component{
 
     state = {
-        monsters: [],
         startIndex: 0 
     }
 
-    getAllMonsters = () => {
-        this.setState({ monsters: initialMonsters })
-    }
-
     renderMonsters = () => {   
-        return this.state.monsters
+        return this.props.monsters
                 .slice(this.state.startIndex, this.state.startIndex + 5)
-                .map((monster, ind) => <MonsterCard key={ind} {...monster}/>)
+                .map((monster, ind) => <MonsterCard key={ind} {...monster} addMonsterToCampaign={this.props.addMonsterToCampaign}/>)
     }
 
     changeIndex = (num)  => {
@@ -27,11 +18,13 @@ class MonsterContainer extends React.Component{
     }
 
     render(){
-        const { monsters, startIndex } = this.state; 
+        const { startIndex } = this.state; 
+        const { monsters } = this.props;
+        
         return (
             <Container half>
                 <ContainerHeader>Most Wanted</ContainerHeader>
-                <button onClick={this.getAllMonsters}>GET MY MONSTERS</button>
+                <button onClick={this.props.getAllMonsters}>GET MY MONSTERS</button>
                 { this.renderMonsters() }
                 <div>
                     {!!startIndex && !!monsters.length && <StyledBtn onClick={() => this.changeIndex(-5)}>Previous</StyledBtn>}

@@ -8,7 +8,6 @@ export const StyledApp = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Griffy', cursive;
-
 `
 
 export const StyledNav = styled.div`

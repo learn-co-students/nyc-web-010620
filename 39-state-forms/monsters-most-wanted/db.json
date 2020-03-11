@@ -128,6 +128,46 @@
       "img": "https://vignette.wikia.nocookie.net/witcher/images/0/05/Bestiary_Kikimore_warrior_full.png/revision/latest/scale-to-width-down/255?cb=20081115143530",
       "difficulty": 3,
       "reward": 100
+    },
+    {
+      "name": "Werewolf",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51IW0v6Zb8L.jpg",
+      "description": "wassap",
+      "difficulty": "10",
+      "reward": "300",
+      "id": 18
+    },
+    {
+      "name": "Werewolf",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51IW0v6Zb8L.jpg",
+      "description": "def",
+      "difficulty": "10",
+      "reward": "700",
+      "id": 19
+    },
+    {
+      "name": "Werewolf",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51IW0v6Zb8L.jpg",
+      "description": "def",
+      "difficulty": "8",
+      "reward": "500000",
+      "id": 20
+    },
+    {
+      "name": "W",
+      "img": "",
+      "description": "",
+      "difficulty": "",
+      "reward": "",
+      "id": 21
+    },
+    {
+      "name": "Werewolf",
+      "img": "https://vignette.wikia.nocookie.net/witcher/images/6/69/Gwent_cardart_skellige_morkvarg.png/revision/latest/scale-to-width-down/696?cb=20190812154037",
+      "description": "def",
+      "difficulty": "123",
+      "reward": "123",
+      "id": 22
     }
   ]
 }

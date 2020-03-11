@@ -18,7 +18,7 @@ class MonsterCard extends React.Component {
             <div>
                 {this.state.front 
                     ? <MonsterCardFront {...this.props} flipCard={this.flipCard}/>
-                    : <MonsterCardBack {...this.props} flipCard={this.flipCard}/>
+                    : <MonsterCardBack {...this.props} flipCard={this.flipCard} addMonsterToCampaign={this.props.addMonsterToCampaign}/>
                 }
             </div>
         )
