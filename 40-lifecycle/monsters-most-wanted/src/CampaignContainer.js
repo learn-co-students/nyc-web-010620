@@ -6,7 +6,7 @@ const CampaignContainer = (props) => {
     return (
         <Container half>
             <ContainerHeader>ACTIVE CAMPAIGNS</ContainerHeader>
-            {props.monsters.map((monster, ind) => <MonsterCard key={ind} {...monster}/>)}
+            {props.monsters.map((monster, ind) => <MonsterCard key={ind} {...monster} handleClick={props.destroyMonster}/>)}
         </Container>
     )
 }

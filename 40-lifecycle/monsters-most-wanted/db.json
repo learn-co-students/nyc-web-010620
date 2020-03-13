@@ -168,6 +168,14 @@
       "difficulty": "123",
       "reward": "123",
       "id": 22
+    },
+    {
+      "name": "Werewolf",
+      "img": "https://vignette.wikia.nocookie.net/witcher/images/6/69/Gwent_cardart_skellige_morkvarg.png/revision/latest/scale-to-width-down/696?cb=20190812154037",
+      "description": "description",
+      "difficulty": "7",
+      "reward": "300",
+      "id": 23
     }
   ]
 }

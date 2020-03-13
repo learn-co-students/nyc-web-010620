@@ -1,6 +1,17 @@
 import React from 'react'; 
 import MonsterCard from './MonsterCard';
 import { ContainerHeader, Container, StyledBtn } from './styledComponents';
+
+// Other lifecycle ideas
+// unMount for vanquished beasts 
+// unMount will also alert and say you killed the monster 
+
+// 1. move to last page when new monster added
+
+
+// 2. unMount behavior for vanquishing monster successfully 
+
+
 class MonsterContainer extends React.Component{
 
     state = {
@@ -10,7 +21,7 @@ class MonsterContainer extends React.Component{
     renderMonsters = () => {   
         return this.props.monsters
                 .slice(this.state.startIndex, this.state.startIndex + 5)
-                .map((monster, ind) => <MonsterCard key={ind} {...monster} addMonsterToCampaign={this.props.addMonsterToCampaign}/>)
+                .map((monster, ind) => <MonsterCard key={ind} {...monster} handleClick={this.props.addMonsterToCampaign}/>)
     }
 
     changeIndex = (num)  => {
@@ -24,7 +35,6 @@ class MonsterContainer extends React.Component{
         return (
             <Container half>
                 <ContainerHeader>Most Wanted</ContainerHeader>
-                <button onClick={this.props.getAllMonsters}>GET MY MONSTERS</button>
                 { this.renderMonsters() }
                 <div>
                     {!!startIndex && !!monsters.length && <StyledBtn onClick={() => this.changeIndex(-5)}>Previous</StyledBtn>}
