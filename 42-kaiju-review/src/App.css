@@ -1,0 +1,144 @@
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  background-image: url('https://www.hdwallpaper.nu/wp-content/uploads/2018/04/godzilla_2014-18.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.App {
+  text-align: center;
+}
+
+#title {
+  color: red;
+  position: fixed;
+  /* left: -5em; */
+  top: 5.5em;
+  right: -5em;
+  transform: rotate(90deg)
+}
+
+#kaiju-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin: 10%;
+  padding: none;
+}
+
+#create-kaiju-form {
+  color: red;
+  padding: 1em;
+}
+
+input[type="text"] {
+  background: #BB002D;
+  color: white;
+  height: 1.5em;
+  margin: 1em;
+  border: 1px black solid;
+}
+
+input::placeholder {
+  background: #AA003E;
+  color: #ddd;
+  opacity: 0.8;
+}
+
+.kaiju-card {
+  width: 90%;
+  margin: 5%;
+  border: solid black 2px;
+  position: relative;
+  max-height: 40em;
+  overflow: hidden;
+  background: white;
+  color: red;
+  box-shadow: 5px 5px;
+}
+
+.kaiju-card-image {
+  max-width: 100%;
+}
+
+.kaiju-card-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.kaiju-card-power {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+
+.kaiju-card-edit-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: solid black 2px;
+  border-width: 2px 2px 0 0;
+}
+
+.kaiju-card-edit-form {
+  position: absolute;
+  top: 3em;
+  left: 5%;
+  width: 85%;
+  background: #000a;
+  padding: 1em;
+  color: white;
+}
+
+.kaiju-card-delete-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-width: 2px 0 0 2px;
+}
+
+button {
+  color: white;
+  background: #000a;
+  border: solid black 2px;
+  cursor: pointer;
+}
+
+#ticker-container {
+  position: fixed;
+  bottom: 0;
+  height: 2em;
+  background: #fff;
+  border-top: solid red 1px;
+}
+
+#ticker-container div {
+  animation: scroll-left 30s infinite linear;
+  padding-left: 100vw;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+#ticker-container span {
+  color: red;
+  padding-right: 4em;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5em;
+}
+
+@keyframes scroll-left {
+  from {transform: translate3d(0, 0, 0);}
+  to {transform: translate3d(-100%, 0, 0);}
+}
+
+@keyframes warning-flash {
+  from {color: red}
+  to {color: orange}
+}

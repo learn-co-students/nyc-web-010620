@@ -1,0 +1,42 @@
+{
+  "kaijus": [
+    {
+      "id": 1,
+      "name": "Godzilla2",
+      "power": "Atomic Stank Breath",
+      "image": "https://vignette.wikia.nocookie.net/nickelodeon/images/7/78/SpongeBob-SquarePants-new-stock-art.png/revision/latest?cb=20190902160109"
+    },
+    {
+      "id": 2,
+      "name": "Mothra",
+      "power": "Poison Powder",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61Jp8FUo27L._SX466_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "King Kong",
+      "power": "Banana",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71IPfsG7AsL._SX425_.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Gidorah",
+      "power": "Lightning breath",
+      "image": "https://i.ebayimg.com/images/g/kskAAOSwp2VdldA4/s-l640.jpg"
+    },
+    {
+      "name": "spongebob",
+      "power": "Burger flipping",
+      "image": "https://i.ytimg.com/vi/qD2LW6naK-g/maxresdefault.jpg",
+      "id": 5
+    }
+  ],
+  "sightings": [
+    {
+      "id": 1,
+      "kaijuId": 1,
+      "location": "Tokyo",
+      "description": "Oh no! There goes Tokyo! Go go Godzilla!"
+    }
+  ]
+}
