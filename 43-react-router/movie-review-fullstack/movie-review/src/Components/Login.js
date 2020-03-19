@@ -15,6 +15,11 @@ class Login extends React.Component{
 
   handleSubmit = (e) => {
     e.preventDefault()
+    if (this.state.password === '123'){
+      this.props.history.push('/movies') // Redirect component can also be used here
+    } else {
+      alert(' WRONG. YA PLAIN OLD WRONG ')
+    }
 
   }
 

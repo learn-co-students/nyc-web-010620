@@ -1,10 +1,21 @@
 import React from 'react';
 import NewReviewForm from './NewReviewForm';
+import { API_BASE } from '../constants'
 
 class MoviePage extends React.Component {
   state = {
     addingReview: false,
     movie: null
+  }
+
+  componentDidMount() {
+    fetch(`${API_BASE}/movies/${this.props.match.params.id}`)
+    .then(res => res.json())
+    .then(movie => {
+      this.setState({
+        movie
+      })
+    })
   }
 
   toggleNewReviewForm = () => {
@@ -25,35 +36,35 @@ class MoviePage extends React.Component {
     )
   }
 
-  renderReviews = (selectedMovie) => {
-    console.log(selectedMovie)
-    return selectedMovie.reviews.length ? selectedMovie.reviews.map(review => this.renderSingleReview(review)) : "No reviews yet"
+  renderReviews = () => {
+    return this.state.movie.reviews.length ? this.state.movie.reviews.map(review => this.renderSingleReview(review)) : "No reviews yet"
   }
 
-  renderMovieInfo = (selectedMovie) => {
+  renderMovieInfo = () => {
     return (
       <>
-        <img alt="movie poster" src={selectedMovie ? selectedMovie.img : ""} />
+        <img alt="movie poster" src={this.state.movie ? this.state.movie.img : ""} />
         <div className="movie-info">
-            <h2>{selectedMovie.title}</h2>
-            <h4>{selectedMovie.director}</h4>
-            <div>{selectedMovie.year}</div>
+            <h2>{this.state.movie.title}</h2>
+            <h4>{this.state.movie.director}</h4>
+            <div>{this.state.movie.year}</div>
         </div>
         <div className="reviews-container">
           <h2>Reviews</h2>
           <button onClick={this.toggleNewReviewForm}>{this.state.addingReview ? "Close Form" : "Open Form"}</button>
-          {this.state.addingReview && <NewReviewForm movieId={selectedMovie.id} toggleNewReviewForm={this.toggleNewReviewForm}/>}
-          {this.renderReviews(selectedMovie)}
+          {this.state.addingReview && <NewReviewForm movieId={this.state.movie.id} toggleNewReviewForm={this.toggleNewReviewForm}/>}
+          {this.renderReviews()}
         </div>
       </>
     )
   }
 
   render() {
+    console.log('movie page props', this.props, this.state)
     return (
       <div className="movie-page">
-          <div onClick={null} className="back-button">⬅️</div>
-          {this.renderMovieInfo(this.props)} 
+          <div onClick={() => this.props.history.goBack()} className="back-button">⬅️</div>
+          {this.state.movie && this.renderMovieInfo()} 
       </div>
     );
   }

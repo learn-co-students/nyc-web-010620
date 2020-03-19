@@ -3,28 +3,28 @@ React Router
 
 ## SWBAT
 
-- [ ] Create a multi-page SPA
-- [ ] Explain the advantages of using React Router
-- [ ] Utilize the most common `react-router` components to build a SPA: `BrowserRouter`, `Route`, `Switch`, `Link`, and `NavLink`
-- [ ] Use `push` and `history` to navigate pages
-- [ ] Create dynamic routes and use `params`
-- [ ] Make the distinction between `state` being one _Single Source of Truth_ and `react-router` being another _Single Source of Truth_
+- [X] Create a multi-page SPA
+- [X] Explain the advantages of using React Router
+- [X] Utilize the most common `react-router` components to build a SPA: `BrowserRouter`, `Route`, `Switch`, `Link`, and `NavLink`
+- [X] Use `push` and `history` to navigate pages
+- [X] Create dynamic routes and use `params`
+- [X] Make the distinction between `state` being one _Single Source of Truth_ and `react-router` being another _Single Source of Truth_
 
 
 
 ## Movie Review Fullstack 
 ### Setup 
+- Run backend: `rails s`
 - Run frontend: `npm start` 
-- Run backend: `rails s -p 3001`
 
 ### Features
 - [MovieApp Wireframe and Component Hierarchy](https://awwapp.com/b/ui0yjws5o/)
-- [ ] Route for login
-- [ ] Route for signup
-- [ ] Route for home page
-- [ ] Enable navbar to move between home/login/signup
-- [ ] Clicking on a movie movies us to `/movies/:id`
-- [ ] Use dynamic route to fetch a display single movie view
+- [X] Route for login       => `/login`
+- [X] Route for signup       => `/signup`
+- [X] Route for home page       => `/movies`
+- [X] Enable navbar to move between home/login/signup
+- [X] Clicking on a movie movies us to        => `/movies/:id`
+- [X] Use dynamic route to fetch a display single movie view
 
 ## Lecture Notes
 - [Example with All of Ze Routes](https://github.com/sbal13/Project_Athena_client/blob/master/src/App.js)
@@ -32,10 +32,16 @@ React Router
 ## SPAs
 
 ### Benefits
-
+- Speed! Not having to reload a page or refetch any webpage info 
 
 
 ### Challenges 
+- If that initial fetch is slow... the user is just waiting 
+- Everything is at one route ( ie localhost:3000 )
+   - reload and lose EVERYTHING. WHERE WAS I?!?
+   - no sharing. and sharing is caring 
+   - can't bookmark 
+   - no navigation! 
 
 
 
