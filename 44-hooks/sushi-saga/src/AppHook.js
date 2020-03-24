@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 // import SushiContainer from './containers/SushiContainer';
 import SushiContainer from './containers/SushiContainerHook';
 import Table from './containers/Table';
@@ -6,50 +6,49 @@ import Table from './containers/Table';
 // Endpoint!
 const API = "http://localhost:3000/sushis"
 
-class App extends Component {
+const App = props => {
 
-  state = {
-    sushis: [],
-    eatenSushis: [],
-    budget: 105
-  }
+  const [ sushis, setSushis ] = useState([])
+  const [ eatenSushis, setEatenSushis ] = useState([])
+  const [ budget, setBudget ] = useState(105)
 
-  componentDidMount(){
+  useEffect(() => {
     fetch(API)
     .then(res => res.json())
     .then(data => {
-      this.setState({ sushis: data })
+      setSushis(data)
     })
-  }
+  }, [])
 
-  eatSushi = (id, price, eaten ) => {
-    if(price <= this.state.budget && !eaten){ 
-      let newSushis = this.state.sushis.map(sushi => { 
+  const eatSushi = (id, price, eaten ) => {
+    if(price <= budget && !eaten){ 
+      let newSushis = sushis.map(sushi => { 
         if(sushi.id === id){ 
           sushi.eaten = true
         }
         return sushi 
       })
     
-      this.setState({ 
-        sushis: newSushis,
-        eatenSushis: [...this.state.eatenSushis, id],
-        budget: this.state.budget - price
-      })
+      // this.setState({ 
+      //   sushis: newSushis,
+      setSushis(newSushis)
+      //   eatenSushis: [...eatenSushis, id],
+      setEatenSushis([...eatenSushis, id])
+      //   budget: budget - price
+      setBudget(budget - price )
+      // })
     } else {
       window.open("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSklpwBW2RjOugiPzZ1iu1tED80vDAO8BoMwhwb1VdBD7WQ7nh0")
     }
   }
+  
 
-  render() {
-    console.log('APP HOOK IT UP')
-    return (
+  return (
       <div className="app">
-        <SushiContainer sushis={this.state.sushis} eatSushi={this.eatSushi} />
-        <Table eatenSushis={this.state.eatenSushis} budget={this.state.budget} />
+        <SushiContainer sushis={sushis} eatSushi={eatSushi} />
+        <Table eatenSushis={eatenSushis} budget={budget} />
       </div>
     );
-  }
 }
 
 export default App;
