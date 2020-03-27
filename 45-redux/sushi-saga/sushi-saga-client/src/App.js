@@ -1,38 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import SushiContainer from './containers/SushiContainer';
 import Table from './containers/Table';
+import { fetchSushiActionCreator, increaseMoneyActionCreator } from './actionCreators'
+
 
 // Endpoint!
-const API = "http://localhost:3000/sushis"
+// const API = "http://localhost:3000/sushis"
 
 class App extends Component {
 
   state = {
-    sushis: [],
-    eatenSushis: [], // an array of id's of eaten sushis
-    money: 50,
     moolahInput: ''
   }
 
   componentDidMount() {
-    fetch(API)
-    .then(resp => resp.json())
-    .then(sushis => this.setState({ sushis }))
-  }
-
-  handleConsumption = (price, id) => {
-    if(this.state.eatenSushis.includes(id)) return //Exit
-
-    if(this.state.money >= price) {
-      let newAte = [...this.state.eatenSushis]
-      newAte.push(id)
-
-      this.setState(prevState => {
-        return {eatenSushis: [...prevState.eatenSushis, id], money: prevState.money - price}
-      }) 
-    } else {
-      alert("NOPE. Come back with more money")
-    }
+    this.props.fetchSushis()
   }
 
   handleMoolahChange = (e) => {
@@ -41,8 +24,9 @@ class App extends Component {
 
   handleMoolahSubmit = (e) => {
     e.preventDefault();
+    this.props.increaseMoney(parseInt(this.state.moolahInput, 10))
     this.setState({ 
-      money: this.state.money + parseInt(this.state.moolahInput),
+      // money: this.state.money + parseInt(this.state.moolahInput, 10),
       moolahInput: ''
     })
   }
@@ -54,11 +38,18 @@ class App extends Component {
           <input type="text" value={this.state.moolahInput} onChange={this.handleMoolahChange}/>
           <button type="submit">Add Moolah</button>
         </form>
-        <SushiContainer sushis={this.state.sushis} consume={this.handleConsumption} eatenSushis={this.state.eatenSushis}/>
-        <Table eatenSushis={this.state.eatenSushis} money={this.state.money}/>
+        <SushiContainer />
+        <Table />
       </div>
     );
   }
 }
 
-export default App;
+const mdp = dispatch => {
+  return {
+    fetchSushis: () => dispatch(fetchSushiActionCreator()),
+    increaseMoney: amount => dispatch(increaseMoneyActionCreator(amount))
+  }
+}
+
+export default connect(null, mdp)(App);
